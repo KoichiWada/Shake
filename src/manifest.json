@@ -1,0 +1,30 @@
+{
+  // Required
+  "manifest_version": 2,
+  "name": "Shake",
+  "version": "0.1",
+
+  "description": "Shake the pages.",
+  "icons": {"128": "shake.png"},
+
+  "browser_action": {
+      "default_icon": "shake38.png",
+      "default_title": "Shake"
+  },
+
+  // Optional
+  "author": "Koichi Wada",
+  "background": {
+    "scripts": ["background.js"],
+    "persistent": false
+  },
+  "content_scripts": [
+      {
+          "matches": ["*://*/*"],
+          "js": ["shake.js"]
+      }
+  ],
+  "permissions": [
+      "activeTab"
+  ]
+}
